@@ -144,13 +144,13 @@ sub Store {
     my ($sha, $content) = @_;
 
     # No-op if the path exists already
-    return (1) if $self->BucketObj->head_key( $sha );
+    return ($sha) if $self->BucketObj->head_key( $sha );
 
     $self->BucketObj->add_key(
         $sha => $content
     ) or return (undef, "Failed to write to AmazonS3: " . $self->S3->errstr);
 
-    return (1);
+    return ($sha);
 }
 
 sub DownloadURLFor {
