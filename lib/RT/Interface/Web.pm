@@ -112,6 +112,7 @@ sub JSFiles {
       jquery-ui.min.js
       jquery-ui-timepicker-addon.js
       jquery-ui-patch-datepicker.js
+      jquery.ui.sortable.js
       jquery.modal.min.js
       jquery.modal-defaults.js
       jquery.cookie.js
