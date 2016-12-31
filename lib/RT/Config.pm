@@ -1492,7 +1492,7 @@ sub GetObfuscated {
     return $self->Get(@_) unless $obfuscate;
 
     my $res = $self->Get(@_);
-    $res = $obfuscate->( $self, $res, $user );
+    $res = $obfuscate->( $self, \%$res, $user );
     return $self->_ReturnValue( $res, $META{$name}->{'Type'} || 'SCALAR' );
 }
 
